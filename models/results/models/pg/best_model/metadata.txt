@@ -1,0 +1,3 @@
+algorithm=a2c
+run=4
+mean_reward=1916.000

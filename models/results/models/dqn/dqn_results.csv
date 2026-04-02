@@ -1,0 +1,11 @@
+run,lr,gamma,batch_size,buffer_size,exploration_initial_eps,exploration_final_eps,exploration_fraction,tau,target_update_interval,mean_reward,std_reward,training_time_s,behaviour_notes
+1,0.001,0.99,64,10000,1.0,0.05,0.1,1.0,500,25.8,5.173,26.8,"Baseline config. Stable convergence, moderate exploration."
+2,0.0005,0.99,64,10000,1.0,0.05,0.2,1.0,500,25.5,6.477,25.5,Lower LR. Slower but smoother learning curve.
+3,0.0001,0.95,32,5000,1.0,0.1,0.1,1.0,250,28.6,7.405,26.1,"Low LR + smaller buffer. Slower convergence, higher variance."
+4,0.001,0.9,128,20000,1.0,0.01,0.3,1.0,1000,30.1,9.262,25.8,"High batch + large buffer. More stable, lower exploration."
+5,0.0005,0.95,64,15000,0.8,0.05,0.2,0.5,500,28.5,6.477,25.8,Reduced initial eps + soft update. Faster exploitation onset.
+6,0.0002,0.99,256,50000,1.0,0.02,0.5,1.0,2000,35.6,10.365,24.9,Very large buffer + long exploration. Best sample efficiency.
+7,0.001,0.99,64,10000,1.0,0.1,0.1,0.1,500,28.9,6.826,25.8,Soft target update (tau=0.1). Smoother Q-value updates.
+8,0.0001,0.99,32,8000,1.0,0.05,0.15,1.0,300,26.8,6.765,26.2,Small batch + small buffer. Noisy but fast initial learning.
+9,0.0003,0.95,128,30000,1.0,0.05,0.25,1.0,750,27.1,5.234,25.3,Balanced mid-range config. Good generalization.
+10,0.005,0.9,64,5000,1.0,0.2,0.1,1.0,500,28.3,5.84,24.9,"High LR + high final eps. Unstable, overly exploratory."

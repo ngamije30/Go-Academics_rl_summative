@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /c/Users/ngami/OneDrive/Documents/Go-Academics_rl_summative/models/*.png)"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+run,lr,gamma,n_steps,batch_size,n_epochs,clip_range,ent_coef,vf_coef,max_grad_norm,mean_reward,std_reward,training_time_s,behaviour_notes
+1,0.0003,0.99,256,64,10,0.2,0.01,0.5,0.5,1587.2,366.525,548.2,Standard PPO baseline. Reliable convergence.
+2,0.0001,0.99,512,64,10,0.2,0.01,0.5,0.5,1873.0,300.348,551.3,Lower LR + larger rollouts. More stable value estimates.
+3,0.0005,0.95,256,128,5,0.2,0.0,0.5,0.5,1886.4,241.69,353.2,Higher LR + zero entropy. Deterministic policy faster.
+4,0.0003,0.99,128,32,20,0.1,0.01,0.5,0.5,1829.8,307.547,1332.0,More epochs + tighter clip. Conservative policy updates.
+5,0.0003,0.99,256,64,10,0.3,0.02,0.5,0.5,1633.7,337.946,549.2,"Wider clip range. Allows larger updates, may destabilise."
+6,0.001,0.99,1024,256,5,0.2,0.01,0.5,0.5,1635.3,480.491,324.7,Large batch + high LR. Sample-efficient but noisy.
+7,0.0003,0.9,256,64,10,0.2,0.01,1.0,0.5,1812.55,334.735,549.1,High vf_coef + lower gamma. Prioritises value accuracy.
+8,0.0002,0.99,512,128,15,0.15,0.05,0.5,1.0,1823.85,291.926,488.6,High entropy + tight clip. Balances explore/exploit well.
+9,0.0003,0.99,256,64,10,0.2,0.01,0.5,0.5,1754.0,308.564,547.4,Same as run 1 with different seed. Reproducibility check.
+10,0.005,0.9,64,32,3,0.4,0.1,0.1,2.0,1393.45,328.719,442.3,"Aggressive settings. High variance, likely sub-optimal."

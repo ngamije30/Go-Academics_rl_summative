@@ -1,0 +1,11 @@
+run,lr,gamma,n_steps,ent_coef,vf_coef,max_grad_norm,mean_reward,std_reward,training_time_s,behaviour_notes
+1,0.001,0.99,13,0.01,0.0,0.5,1718.7,317.342,319.1,Baseline REINFORCE. Stable but high variance due to no baseline.
+2,0.0005,0.99,13,0.02,0.0,0.5,1765.2,312.556,319.8,"Lower LR. Slower convergence, reduced variance."
+3,0.0001,0.95,13,0.01,0.0,0.5,1563.9,305.735,321.3,Low LR + lower gamma. Weak long-term credit assignment.
+4,0.003,0.99,13,0.0,0.0,0.5,1363.8,362.191,320.7,High LR + zero entropy. Fast but greedy policy collapse risk.
+5,0.001,0.9,13,0.05,0.0,0.5,1853.2,324.779,323.5,"High entropy coefficient. Strong exploration, slow exploitation."
+6,0.0002,0.99,26,0.01,0.0,1.0,1866.7,360.011,303.9,"Doubled n_steps. More complete returns, lower bias."
+7,0.001,0.99,13,0.01,0.0,0.1,1392.25,433.854,318.5,Very low max_grad. Prevents large policy updates.
+8,0.0005,0.95,13,0.1,0.0,0.5,1683.6,316.812,322.3,"High entropy + lower gamma. Exploratory, moderate performance."
+9,0.001,0.99,52,0.01,0.0,0.5,1842.75,258.534,295.0,Very long rollouts (4 episodes). Reduces variance further.
+10,0.005,0.9,13,0.0,0.0,2.0,1522.9,337.201,318.1,High LR + zero entropy. Likely unstable and divergent.

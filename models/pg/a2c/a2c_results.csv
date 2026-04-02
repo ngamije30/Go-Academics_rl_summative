@@ -1,0 +1,11 @@
+run,lr,gamma,n_steps,ent_coef,vf_coef,max_grad_norm,mean_reward,std_reward,training_time_s,behaviour_notes
+1,0.0007,0.99,5,0.01,0.5,0.5,1720.95,336.074,376.1,"Baseline A2C. Steady convergence, low variance."
+2,0.001,0.99,5,0.01,0.5,0.5,1895.1,304.87,379.6,Higher LR. Faster but slightly noisier learning.
+3,0.0005,0.95,10,0.01,0.5,0.5,1855.15,308.605,335.4,Longer n_steps. Reduces bias in advantage estimates.
+4,0.0007,0.99,5,0.05,0.5,0.5,1916.0,399.168,377.0,"High entropy. More exploration, slower exploitation."
+5,0.0007,0.99,5,0.0,0.5,0.5,1795.0,276.512,376.6,"Zero entropy. Deterministic, risk of premature convergence."
+6,0.0002,0.99,20,0.01,0.5,1.0,1803.8,349.02,312.3,"Very long n_steps (20). Low-bias returns, high variance."
+7,0.0007,0.99,5,0.01,1.0,0.5,1875.3,304.324,374.9,High vf_coef. Stronger value function signal.
+8,0.001,0.9,5,0.01,0.25,0.5,1881.2,258.309,380.5,Lower gamma + reduced vf_coef. Less future credit.
+9,0.0003,0.99,13,0.02,0.5,0.5,1847.2,323.424,326.9,Episode-length n_steps (13). Full-episode advantages.
+10,0.005,0.9,5,0.1,0.1,2.0,1335.75,327.631,373.1,Aggressive LR + entropy. Likely unstable.
